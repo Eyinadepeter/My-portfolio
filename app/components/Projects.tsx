@@ -74,7 +74,7 @@ export default function Projects() {
       title: "ElanAI",
       description: "Advanced conversational AI assistant with natural language processing capabilities",
       techStack: "ReactJS, Python",
-      link: "https://github.com/PranayTadakamalla/ElanAI",
+      // link: "https://github.com/PranayTadakamalla/ElanAI",
       icon: <Bot className="w-6 h-6 text-indigo-400" />,
       type: "github",
       category: "AI",
