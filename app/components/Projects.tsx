@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { motion, AnimatePresence } from "framer-motion"
-import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import {
   ExternalLink,
   Github,
@@ -18,32 +18,32 @@ import {
   Sparkles,
   Bot,
   Braces,
-} from "lucide-react"
-import SectionHeading from "./SectionHeading"
+} from "lucide-react";
+import SectionHeading from "./SectionHeading";
 
 // 3D Card effect component
 const Card3D = ({ children }: { children: React.ReactNode }) => {
-  const [rotateX, setRotateX] = useState(0)
-  const [rotateY, setRotateY] = useState(0)
+  const [rotateX, setRotateX] = useState(0);
+  const [rotateY, setRotateY] = useState(0);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const card = e.currentTarget
-    const rect = card.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
-    const centerX = rect.width / 2
-    const centerY = rect.height / 2
-    const rotateXValue = (y - centerY) / 10
-    const rotateYValue = (centerX - x) / 10
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateXValue = (y - centerY) / 10;
+    const rotateYValue = (centerX - x) / 10;
 
-    setRotateX(rotateXValue)
-    setRotateY(rotateYValue)
-  }
+    setRotateX(rotateXValue);
+    setRotateY(rotateYValue);
+  };
 
   const handleMouseLeave = () => {
-    setRotateX(0)
-    setRotateY(0)
-  }
+    setRotateX(0);
+    setRotateY(0);
+  };
 
   return (
     <motion.div
@@ -57,32 +57,23 @@ const Card3D = ({ children }: { children: React.ReactNode }) => {
     >
       {children}
     </motion.div>
-  )
-}
+  );
+};
 
 export default function Projects() {
-  const [activeCategory, setActiveCategory] = useState<string | null>(null)
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   const categories = [
     { id: "AI", label: "AI & ML", icon: <Cpu className="w-4 h-4" /> },
     { id: "Web", label: "Web Apps", icon: <Globe className="w-4 h-4" /> },
     { id: "Tools", label: "Tools", icon: <Braces className="w-4 h-4" /> },
-  ]
+  ];
 
   const projects = [
     {
       title: "ElanAI",
-      description: "Advanced conversational AI assistant with natural language processing capabilities",
-      techStack: "ReactJS, Python",
-      // link: "https://github.com/PranayTadakamalla/ElanAI",
-      icon: <Bot className="w-6 h-6 text-indigo-400" />,
-      type: "github",
-      category: "AI",
-      featured: true,
-    },
-    {
-      title: "ElanAI",
-      description: "Advanced conversational AI assistant with natural language processing capabilities",
+      description:
+        "Advanced conversational AI assistant with natural language processing capabilities",
       techStack: "ReactJS, Python",
       // link: "https://github.com/PranayTadakamalla/ElanAI",
       icon: <Bot className="w-6 h-6 text-indigo-400" />,
@@ -92,7 +83,8 @@ export default function Projects() {
     },
     {
       title: "Cyber Chat Bot",
-      description: "Interactive chatbot platform with advanced conversation capabilities",
+      description:
+        "Interactive chatbot platform with advanced conversation capabilities",
       techStack: "MERN Stack - MongoDB, Express.js, React.js, Node.js",
       link: "https://cyberchat-g4ii.onrender.com/",
       icon: <MessageSquare className="w-6 h-6 text-blue-400" />,
@@ -110,7 +102,8 @@ export default function Projects() {
     },
     {
       title: "Text-to-Speech",
-      description: "Convert text to natural-sounding speech with customizable voices",
+      description:
+        "Convert text to natural-sounding speech with customizable voices",
       techStack: "ReactJS, JavaScript",
       link: "https://pranaytexttospeech.vercel.app/",
       icon: <Headphones className="w-6 h-6 text-violet-400" />,
@@ -119,7 +112,8 @@ export default function Projects() {
     },
     {
       title: "Verses In Motion",
-      description: "Interactive scripture visualization and exploration platform",
+      description:
+        "Interactive scripture visualization and exploration platform",
       techStack: "React.js, Tailwind CSS",
       link: "https://verses-in-motion.vercel.app/",
       icon: <Globe className="w-6 h-6 text-indigo-400" />,
@@ -162,12 +156,17 @@ export default function Projects() {
       type: "github",
       category: "Web",
     },
-  ]
+  ];
 
-  const filteredProjects = activeCategory ? projects.filter((project) => project.category === activeCategory) : projects
+  const filteredProjects = activeCategory
+    ? projects.filter((project) => project.category === activeCategory)
+    : projects;
 
   return (
-    <section id="projects" className="py-20 relative overflow-hidden bg-slate-950">
+    <section
+      id="projects"
+      className="py-20 relative overflow-hidden bg-slate-950"
+    >
       {/* Background elements */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-violet-900/10 via-slate-900 to-slate-950 z-0"></div>
 
@@ -175,8 +174,18 @@ export default function Projects() {
       <div className="absolute inset-0 opacity-5">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" />
+            <pattern
+              id="grid-pattern"
+              width="40"
+              height="40"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 40 0 L 0 0 0 40"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.5"
+              />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid-pattern)" />
@@ -200,7 +209,9 @@ export default function Projects() {
           <button
             onClick={() => setActiveCategory(null)}
             className={`px-4 py-2 rounded-full flex items-center gap-2 transition-all duration-300 ${
-              activeCategory === null ? "bg-indigo-600 text-white" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+              activeCategory === null
+                ? "bg-indigo-600 text-white"
+                : "bg-slate-800 text-slate-300 hover:bg-slate-700"
             }`}
           >
             <Sparkles className="w-4 h-4" />
@@ -253,11 +264,17 @@ export default function Projects() {
                         <div className="p-3 rounded-full bg-slate-800 mr-4 border border-indigo-500/20">
                           {project.icon}
                         </div>
-                        <h3 className="text-xl font-bold text-white font-display">{project.title}</h3>
+                        <h3 className="text-xl font-bold text-white font-display">
+                          {project.title}
+                        </h3>
                       </div>
 
-                      <p className="text-slate-300 mb-4">{project.description}</p>
-                      <p className="text-sm text-slate-400 mb-6 mt-auto font-mono">{project.techStack}</p>
+                      <p className="text-slate-300 mb-4">
+                        {project.description}
+                      </p>
+                      <p className="text-sm text-slate-400 mb-6 mt-auto font-mono">
+                        {project.techStack}
+                      </p>
 
                       <a
                         href={project.link}
@@ -286,5 +303,5 @@ export default function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }
