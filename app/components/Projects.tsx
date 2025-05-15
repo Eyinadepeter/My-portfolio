@@ -93,7 +93,7 @@ export default function Projects() {
       title: "Health Assistant",
       description: "AI-powered health consultation and recommendation system",
       techStack: "ReactJS, CSS",
-      link: "https://healthassistant-pranaytadakamallas-projects.vercel.app/",
+      // link: "https://healthassistant-pranaytadakamallas-projects.vercel.app/",
       icon: <Flask className="w-6 h-6 text-green-400" />,
       type: "live",
       category: "AI",
