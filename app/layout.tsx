@@ -10,7 +10,7 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space
 export const metadata = {
   title: "Eyinade Peter | software Developer",
   description: "Portfolio of  Eyinade Peter - Software Engineer, Web Developer, and Project Manager.",
-    generator: 'v0.dev'
+    generator: 'mizetech'
 }
 
 export default function RootLayout({
